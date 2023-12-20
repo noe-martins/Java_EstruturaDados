@@ -10,23 +10,32 @@ import com.noe.estruturadedados.entities.Vetor;
 public class ProgramVetor {
 
 	public static void main(String[] args) {
-		Vetor vetor = new Vetor(2);
+		Vetor vetor = new Vetor(5);
 		
 		try {
-			imprimirVetor(vetor);
+			System.out.println(vetor);
 			
 			vetor.add("Noé");
 			vetor.add("Noé");
+			vetor.add("Maria");
 			
+			System.out.println("\nQuantidade de posições ocupadas do vetor: " + vetor.getPosicao());
+			System.out.println();
+			//IMPRESSÃO SOMENTE DOS ELEMENTOS OCUPADOS DO VETOR
+			System.out.println(vetor);
+			//IMPRESSÃO DE TODOS OS ELEMENTOS DO VETOR
 			System.out.println();
 			imprimirVetor(vetor);
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	private static void imprimirVetor(Vetor vetor) {
-		for (String elementosVetor : vetor.getElementos()) {
-			System.out.println(elementosVetor);
+		System.out.print(vetor.getElementos()[0]);
+		for (int i = 1; i < vetor.getElementos().length; i++) {
+			System.out.print(", " + vetor.getElementos()[i]);
 		}
 	}
 
